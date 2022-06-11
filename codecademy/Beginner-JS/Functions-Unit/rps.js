@@ -16,9 +16,14 @@ Our code will break the game into four parts:
     3. Compare the two choices and determine a winner.
     4. Start the program and display the results.
 */
+//gets the user choice via a parameter and verifies that the argument is a valid choice
 const getUserChoice = (userInput) => {
+    // converts userInput to all lowercase for evaluation
   userInput = userInput.toLowerCase();
 
+  // evaluates userInput and ensures that it matches one of the four valid options
+  // if no match, logs "Not a valid selection."
+  // "bomb" is a cheat code to ensure the user always wins if they select it
   if (
     userInput === "rock" ||
     userInput === "paper" ||
@@ -31,7 +36,8 @@ const getUserChoice = (userInput) => {
   }
 };
 
-const getComputerChoice = () => {
+// generates a random number and assigns the computer choice accordingly
+const assignComputerChoice = () => {
   let choice = Math.floor(Math.random() * 3);
   switch (choice) {
     case 0:
@@ -45,6 +51,8 @@ const getComputerChoice = () => {
   }
 };
 
+
+// core logic of the game, requires two arguments
 const determineWinner = (userChoice, computerChoice) => {
   if (userChoice === "bomb") {
     return "User wins!";
@@ -79,13 +87,15 @@ const determineWinner = (userChoice, computerChoice) => {
   }
 };
 
+// declares variables to call getUserChoice (with argument hardcoded) and assignComputerChoice and assigns results to corresponding variable and inserts both as arguments for the determineWinner function
 const playGame = () => {
   const userChoice = getUserChoice("bomb");
-  const computerChoice = getComputerChoice();
+  const computerChoice = assignComputerChoice();
   console.log(
     `You selected ${userChoice} and the computer selected ${computerChoice}.`
   );
   console.log(determineWinner(userChoice, computerChoice));
 };
 
+// starts the game
 playGame();

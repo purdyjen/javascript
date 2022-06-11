@@ -3,19 +3,20 @@ From Codecademy's Learn JavaScript course, Conditionals Unit:
 https://www.codecademy.com/learn/introduction-to-javascript
 */
 
-// defines a variable (userName) and sets it to an empty string
-let userName = '';
+// Adds prompt functionality for node
+// to install, type "npm install" (if you downloaded the package.json) or "npm -i prompt-sync"
+const prompt = require('prompt-sync')();
+
+// defines a variable (userName) and prompts the user for their name
+let userName = prompt("What is your name? ");
 
 // a ternary expression that decides how to greet the user based on whether or not the user has entered a name
   // format: 
   // conditionToCheck ? code if truthy : code if falsy
 userName ? console.log(`Hello, ${userName}!`) : console.log("Hello!");
 
-// a variable holding the question the user desires to ask the Magic 8 Ball
-const userQuestion = "Will I get a job?";
-
-// logs the question to the console
-console.log(userQuestion);
+// prompts the user for their desired question
+const userQuestion = prompt("You may ask the Magic 8 Ball your question: ");
 
 // creates a variable that randomly generates a number between 0 (inclusive) and 8 (exclusive)
 let randomNumber = Math.floor(Math.random() * 8);
