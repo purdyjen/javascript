@@ -1,3 +1,8 @@
+/*
+From Codecademy's Learn Intermediate Javascript, Async-Await Unit:
+https://www.codecademy.com/learn/learn-intermediate-javascript
+*/
+
 const {shopForBeans, soakTheBeans, cookTheBeans} = require('./library.js');
 
 // Write your code below:
