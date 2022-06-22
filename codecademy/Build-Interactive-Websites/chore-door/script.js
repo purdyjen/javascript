@@ -1,3 +1,9 @@
+/*
+From Codecademy's Build Interactive Websites:
+https://www.codecademy.com/courses/build-interactive-websites
+*/
+
+
 // Access HTML elements
 
 let doorImage1 = document.getElementById('door1');
